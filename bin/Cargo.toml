@@ -1,0 +1,23 @@
+[package]
+name = "trrr-bin"
+version = "0.1.0"
+authors = ["Markus Heikkinen <ittevien@gmail.com>"]
+edition = "2021"
+
+[[bin]]
+name = "trrr"
+path = "src/main.rs"
+
+[dependencies]
+clap = "2.34"
+env_logger = "0.9"
+
+[dependencies.trrr]
+path = ".."
+features = ["wow64"]
+
+[dependencies.winapi]
+version = "0.3.3"
+features = [
+    "winuser",
+]

@@ -1,0 +1,32 @@
+[package]
+name = "trrr"
+version = "0.2.0"
+authors = ["Markus Heikkinen <ittevien@gmail.com>"]
+edition = "2021"
+
+[lib]
+name = "trrr"
+
+[profile.release]
+lto = true
+
+[dependencies]
+byteorder = "1.1.0"
+quick-error = "2.0"
+scopeguard = "1.0"
+libc = "0.2.29"
+log = { version = "0.4" }
+
+[workspace]
+members = ["bin"]
+
+[dependencies.winapi]
+version = "0.3.3"
+features = [
+    "debugapi", "errhandlingapi", "fileapi", "handleapi", "libloaderapi", "memoryapi",
+    "namedpipeapi", "processenv", "processthreadsapi", "synchapi", "winbase", "winerror",
+    "wow64apiset",
+]
+
+[features]
+wow64 = []
